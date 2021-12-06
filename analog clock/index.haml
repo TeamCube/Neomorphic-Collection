@@ -1,0 +1,22 @@
+.main
+  .clock
+    / center point
+    #center
+    / hours mark
+    #time12
+    #time3
+    #time6
+    #time9
+    / dark-mode button
+    .switch
+      %button#button
+        %i.fa.fa-moon-o
+    / hours,minutes, seconds hand
+    .seconds
+      #sec
+    .minutes
+      #min
+    .hour
+      #hour
+/ javascript part
+%script{:src => "main.js"}
