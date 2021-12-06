@@ -1,0 +1,156 @@
+*
+    margin 0
+    padding 0
+    box-sizing border-box
+    font-family 'poppins', sans-serif
+
+.main
+    display grid
+    place-items center
+    min-height 100vh
+    background #ececec
+
+.clock
+    position relative
+    width 350px
+    height 350px
+    border-radius 50%
+    display flex
+    align-items center
+    justify-content center
+    box-shadow -4px -4px 12px rgba(255, 255, 255, 1), 4px 4px 12px rgba(121, 130, 160, 0.747)
+
+#center
+    height 25px
+    width 25px
+    border-radius 50%
+    z-index 20
+    background #ececec
+    box-shadow inset -2px -2px 6px rgba(255, 255, 255, 1), inset 2px 2px 6px rgba(121, 130, 160, 0.747)
+
+.seconds,
+.minutes,
+.hour
+    position absolute
+    top 50%
+
+.seconds
+    height 4px
+    width 80%
+    z-index 10
+    #sec
+        height 100%
+        width 100%
+        position relative
+        transform rotate(95deg)
+        &::before
+            content ''
+            position absolute
+            width 60%
+            height 100%
+            right 0
+            background #FF5722
+
+.minutes
+    height 4px
+    width 76%
+    #min
+        height 100%
+        width 100%
+        position relative
+        transform rotate(15deg)
+        &::before
+            content ''
+            position absolute
+            width 50%
+            height 100%
+            right 0
+            background rgba(70, 70, 70, 0.35)
+
+.hour
+    height 6px
+    width 60%
+    #hour
+        height 100%
+        width 100%
+        position relative
+        transform rotate(45deg)
+        &::before
+            content ''
+            position absolute
+            width 50%
+            height 100%
+            right 0
+            background rgba(70, 70, 70, 0.35)
+
+#time12,
+#time6
+    width 5px
+    height 25px
+    position absolute
+    background rgba(70, 70, 70, 0.35)
+
+#time3,
+#time9
+    width 25px
+    height 5px
+    position absolute
+    background rgba(70, 70, 70, 0.35)
+
+#time12
+    top 0
+
+#time3
+    top 50%
+    right 0
+
+#time6
+    bottom 0
+
+#time9
+    top 50%
+    left 0
+
+.switch
+    position absolute
+    top 20%
+    height 50px
+    width 50px
+    border-radius 50%
+    display flex
+    align-items center
+    justify-content center
+    box-shadow inset -2px -2px 6px rgba(255, 255, 255, 1), inset 2px 2px 6px rgba(121, 130, 160, 0.747)
+    button
+        cursor pointer
+        padding 5px 10px
+        border none
+        outline none
+        font-size 1.5em
+        color #FF5722
+        background transparent
+
+.dark_mode
+    background #212121
+    .switch
+        box-shadow -4px -4px 10px rgba(50, 50, 50, 0.4), inset 4px 4px 10px rgba(0, 0, 0, 0.4), 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(50, 50, 50, 0.4)
+    #center
+        background #212121
+        box-shadow -4px -4px 10px rgba(50, 50, 50, 0.4), inset 4px 4px 10px rgba(0, 0, 0, 0.4), 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(50, 50, 50, 0.4)
+    .clock
+        box-shadow -4px -4px 10px rgba(50, 50, 50, 0.4), inset 4px 4px 10px rgba(0, 0, 0, 0.4), 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(50, 50, 50, 0.4)
+
+.dark_mode #time12,
+.dark_mode #time3,
+.dark_mode #time6,
+.dark_mode #time9
+    background #D0D3D4
+
+.dark_mode #hour::before,
+.dark_mode #min::before
+    content ''
+    position absolute
+    right 0
+    width 50%
+    height 100%
+    background #D0D3D4
