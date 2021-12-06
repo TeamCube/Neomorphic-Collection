@@ -1,0 +1,89 @@
+body {
+    background-color: #eee
+}
+
+.radio-button input {
+    opacity: 0
+}
+
+.radio-button,
+.radio-button * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+radio-button-element {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 80%));
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 6px 6px hsla(0, 0%, 0%, 0.3);
+    transition: 60ms
+}
+
+radio-button-element::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    background: hsl(162, 0%, 69%);
+    border-radius: 50%;
+    box-shadow: inset 0 0 4px hsla(0, 0%, 0%, 0.3);
+    z-index: -1
+}
+
+radio-button-element::after {
+    content: '';
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    bottom: 26px;
+    left: 26px;
+    background: linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 98%));
+    border-radius: 50%;
+    box-shadow: inset 0 1px 6px hsla(0, 0%, 0%, 0.3)
+}
+
+input:checked~radio-button-element::before {
+    background: hsl(162, 52%, 69%)
+}
+
+input:active~radio-button-element,
+radio-button-element:active {
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.3)
+}
+
+.radio-button input:focus {
+    outline: none
+}
+
+input:focus~radio-button-element::before {
+    box-shadow: inset 0 0 4px hsla(0, 0%, 0%, 0.3), 0 0 0 4px hsla(200, 100%, 50%, 0.3)
+}
+
+input:focus~radio-button-element:hover::before {
+    box-shadow: inset 0 0 4px hsla(0, 0%, 0%, 0.3)
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
